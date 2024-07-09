@@ -42,7 +42,7 @@ class StudentController extends Controller
     public function show(string $id):View
     {
        $student=Student::find($id);
-       return view('studsents.show')->with('students',$student);
+       return view('students.show')->with('students',$student);
     }
 
     /**
@@ -57,13 +57,13 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id): RedirectResponse
-    {
-        $student =Student::find($id);
-        $input = $request->all();
-        Student::update($input);
-        return redirect('student')->with('flash_message', 'Student Updated!');
-    }
+public function update(Request $request, string $id): RedirectResponse
+{
+    $student = Student::find($id);
+    $input = $request->all();
+    $student->update($input); // Update the instance, not the model
+    return redirect('students')->with('flash_message', 'Student Updated!');
+}
 
     /**
      * Remove the specified resource from storage.
@@ -71,6 +71,6 @@ class StudentController extends Controller
     public function destroy(string $id): RedirectResponse
     {
         Student::destroy($id);
-        return redirect('student')->with('flash_message', 'Student deleted!');
+        return redirect('students')->with('flash_message', 'Student deleted!');
     }
 }

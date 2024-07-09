@@ -85,12 +85,12 @@
             <div class="col-md-3">
                 <!-- The sidebar -->
                 <div class="sidebar">
-                    <a class="active" href="#home">Home</a>
-                    <a href="#news">Student</a>
-                    <a href="#contact">Teacher</a>
-                    <a href="#contact">Course</a>
-                    <a href="#about">Enrollment</a>
-                    <a href="#contact">Payment</a>
+                    <a class="active" href="{{url('')}}">Home</a>
+                    <a href="{{url('/students')}}">Student</a>
+                    <a href="{{url('/teacher')}}">Teacher</a>
+                    <a href="{{url('/course')}}">Course</a>
+                    <a href="{{url('/enrollment')}}">Enrollment</a>
+                    <a href="{{url('/payment')}}">Payment</a>
 
                 </div>
                 
