@@ -88,7 +88,7 @@
                     <a class="active" href="{{url('')}}">Home</a>
                     <a href="{{url('/students')}}">Student</a>
                     <a href="{{url('/teachers')}}">Teacher</a>
-                    <a href="{{url('/course')}}">Course</a>
+                    <a href="{{url('/courses')}}">Course</a>
                     <a href="{{url('/enrollment')}}">Enrollment</a>
                     <a href="{{url('/payment')}}">Payment</a>
 

@@ -4,18 +4,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Models\Student;
+use App\Models\Course;
 use Illuminate\View\View;
-
-class StudentController extends Controller
+class CourseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index(): View
     {
-        $student= Student::all();
-        return view('students.index')->with('students',$student);
+        $courses= Course::all();
+        return view('courses.index')->with('courses',$courses);
     }
 
     /**
@@ -23,7 +19,7 @@ class StudentController extends Controller
      */
     public function create():View
     {
-        return view('students.create');
+        return view('courses.create');
     }
 
     /**
@@ -32,8 +28,8 @@ class StudentController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $input = $request->all();
-        Student::create($input);
-        return redirect('students')->with('flash_message', 'Student Addedd!');
+        Course::create($input);
+        return redirect('courses')->with('flash_message', 'courses Addedd!');
     }
 
     /**
@@ -41,8 +37,8 @@ class StudentController extends Controller
      */
     public function show(string $id):View
     {
-       $student=Student::find($id);
-       return view('students.show')->with('students',$student);
+       $courses=Course::find($id);
+       return view('courses.show')->with('courses',$courses);
     }
 
     /**
@@ -50,8 +46,8 @@ class StudentController extends Controller
      */
     public function edit(string $id):View
     {
-        $student=Student::find($id);
-        return view('students.edit')->with('students',$student);
+        $courses=Course::find($id);
+        return view('courses.edit')->with('courses',$courses);
     }
 
     /**
@@ -59,10 +55,10 @@ class StudentController extends Controller
      */
 public function update(Request $request, string $id): RedirectResponse
 {
-    $student = Student::find($id);
+    $courses = Course::find($id);
     $input = $request->all();
-    $student->update($input); // Update the instance, not the model
-    return redirect('students')->with('flash_message', 'Student Updated!');
+    $courses->update($input); // Update the instance, not the model
+    return redirect('courses')->with('flash_message', 'courses Updated!');
 }
 
     /**
@@ -70,7 +66,7 @@ public function update(Request $request, string $id): RedirectResponse
      */
     public function destroy(string $id): RedirectResponse
     {
-        Student::destroy($id);
-        return redirect('students')->with('flash_message', 'Student deleted!');
+        Course::destroy($id);
+        return redirect('courses')->with('flash_message', 'courses deleted!');
     }
 }
