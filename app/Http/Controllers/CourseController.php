@@ -58,7 +58,7 @@ public function update(Request $request, string $id): RedirectResponse
     $courses = Course::find($id);
     $input = $request->all();
     $courses->update($input); // Update the instance, not the model
-    return redirect('courses')->with('flash_message', 'courses Updated!');
+    return redirect('courses')->with('flash_message', 'Course Updated!');
 }
 
     /**
@@ -67,6 +67,6 @@ public function update(Request $request, string $id): RedirectResponse
     public function destroy(string $id): RedirectResponse
     {
         Course::destroy($id);
-        return redirect('courses')->with('flash_message', 'courses deleted!');
+        return redirect('courses')->with('flash_message', 'Course deleted!');
     }
 }
