@@ -40,7 +40,8 @@ class BatchController extends Controller
      */
     public function show(string $id)
     {
-        return view('batches.show');
+        $batches=Batch::find($id);
+        return view('batches.show')->with('batches',$batches);
     }
 
     /**
@@ -50,6 +51,7 @@ class BatchController extends Controller
     {
       $batches=Batch::find($id);
       return view('batches.edit')->with('batches',$batches);
+      
     }
 
     /**
