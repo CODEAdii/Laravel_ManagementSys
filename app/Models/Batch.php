@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Batch extends Model
 {
-    protected $table = 'courses';
+    protected $table = 'batches';
     protected $primaryKey = 'id';
-    protected $fillable = ['name', 'syllabus', 'duration'];
-    
+    protected $fillable = ['name', 'course_id', 'start_date'];
+
     use HasFactory;
 }
