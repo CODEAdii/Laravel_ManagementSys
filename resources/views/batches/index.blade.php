@@ -18,8 +18,8 @@
                         <tr>
                             <th>#</th>
                             <th>Name</th>
-                            <th>Address</th>
-                            <th>Mobile</th>
+                            <th>Course_id</th>
+                            <th>Start_date</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -28,8 +28,8 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->name }}</td>
-                            <td>{{ $item->address }}</td>
-                            <td>{{ $item->mobile }}</td>
+                            <td>{{ $item->course_id }}</td>
+                            <td>{{ $item->start_date }}</td>
 
                             <td>
                                 <a href="{{ url('/batches/' . $item->id) }}" title="View batches"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>

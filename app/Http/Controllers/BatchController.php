@@ -40,7 +40,7 @@ class BatchController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('batches.show');
     }
 
     /**
@@ -48,7 +48,8 @@ class BatchController extends Controller
      */
     public function edit(string $id)
     {
-        //
+      $batches=Batch::find($id);
+      return view('batches.edit')->with('batches',$batches);
     }
 
     /**
@@ -56,7 +57,10 @@ class BatchController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $batches=Batch::find($id);
+        $input = $request->all();
+        $batches->update($input);
+        return redirect('batches')->with('flash_message', 'Batch Addedd!');
     }
 
     /**
