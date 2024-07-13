@@ -2,10 +2,10 @@
 @section('content')
  
 <div class="card">
-  <div class="card-header">Teacher Page</div>
+  <div class="card-header">Batch Page</div>
   <div class="card-body">
       
-      <form action="{{ url('teachers') }}" method="post">
+      <form action="{{ url('batches') }}" method="post">
         {!! csrf_field() !!}
         <label>Name</label></br>
         <input type="text" name="name" id="name" class="form-control"></br>

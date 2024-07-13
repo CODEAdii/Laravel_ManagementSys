@@ -3,14 +3,14 @@
  
  
 <div class="card">
-  <div class="card-header">Teacher Page</div>
+  <div class="card-header">Batch Page</div>
   <div class="card-body">
    
  
         <div class="card-body">
-        <h5 class="card-title">Name : {{ $teachers->name }}</h5>
-        <p class="card-text">Address : {{ $teachers->address }}</p>
-        <p class="card-text">Mobile : {{ $teachers->mobile }}</p>
+        <h5 class="card-title">Name : {{$batches->name}}</h5>
+        <p class="card-text">Course_id : {{ $batches->course_id }}</p>
+        <p class="card-text">Start_date : {{ $batches->start_date }}</p>
   </div>
        
     </hr>

@@ -68,6 +68,7 @@ class BatchController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Batch::destroy($id);
+        return redirect('batches')->with('flash_message', 'Batch deleted!');
     }
 }
