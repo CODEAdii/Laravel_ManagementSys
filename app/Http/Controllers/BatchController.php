@@ -1,16 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Batch;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-
+use Illuminate\Http\Response;
+use App\Models\Batch;
+use Illuminate\View\View;
 class BatchController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
        $batches= Batch::all();
         return view('batches.index')->with('batches',$batches);
@@ -21,7 +22,7 @@ class BatchController extends Controller
      */
     public function create()
     {
-        //
+        return view('batches.create');
     }
 
     /**
@@ -29,7 +30,9 @@ class BatchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Batch::create($input);
+        return redirect('batches')->with('flash_message', 'Batch Addedd!');
     }
 
     /**
