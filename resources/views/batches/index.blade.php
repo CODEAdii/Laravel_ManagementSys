@@ -17,7 +17,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
+                            <th>Batch Name</th>
                             <th>Course_id</th>
                             <th>Start_date</th>
                             <th>Actions</th>
