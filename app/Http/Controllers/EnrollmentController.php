@@ -30,7 +30,7 @@ class EnrollmentController extends Controller
     {
         $input = $request->all();
         Enrollment::create($input);
-        return redirect('enrollments')->with('flash_message', 'enrollments Addedd!');
+        return redirect('enrollments')->with('flash_message', 'enrollments Addedd Successfully!');
     }
 
     /**
