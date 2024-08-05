@@ -7,7 +7,7 @@
       
      
 
-    <form action="{{ url('enrollments/') }}" method="post">
+    <form action="{{ url('enrollments') }}" method="post">
       {!! csrf_field() !!}
      
       <label>Enroll No.</label></br>
