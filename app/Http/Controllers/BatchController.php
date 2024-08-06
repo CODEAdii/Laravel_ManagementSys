@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Course;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -20,15 +21,21 @@ class BatchController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create():View
     {
-        return view('batches.create');
+        $courses=Course::pluck('name','id');
+        return view('batches.create',compact('courses'));
+
+
+
+     // return view('batches.create')
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    
+     public function store(Request $request)
     {
         $input = $request->all();
         Batch::create($input);
